@@ -1,0 +1,98 @@
+Config git l?n ð?u kh?i ch?y
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+Xem thông tin config l?n ð?u
+$ cat ~/.gitconfig ho?c git config --list
+
+T?o local repository
+$git init 
+$git add * ho?c git add tênfile  
+$git status : tr?ng thái t?p tin
+$git commit -m"firstcommit"
+$git push ho?c git push origin master
+
+N?u file ? local ð? t?n t?i nhýng n?i dung thay ð?i có th? dùng 
+$git commit -a -m"commit"
+
+Git Log và Undo Commit
+$git log : xem thông tin các l?n commit 
+Có th? dùng $git revert 3f1ef84ada3dfd936735d8724f9bbb3437c77b19 ð? quay l?i l?n commit trý?c
+commit 3f1ef84ada3dfd936735d8724f9bbb3437c77b19
+Author: Thach Pham <contact@thachpham.com>
+Date: Tue Apr 21 17:16:37 2015 -0700
+
+$ git log -p:Ð? hi?n th? tri ti?t m?i l?n commit
+commit 3f1ef84ada3dfd936735d8724f9bbb3437c77b19
+Author: Thach Pham <contact@thachpham.com>
+Date: Tue Apr 21 17:16:37 2015 -0700
+
+ Hihi
+
+diff --git a/README.md b/README.md
+index db7e814..e08f24f 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Huong dan Git co ban
++hhih\n
+diff --git a/faq.html b/faq.html
+new file mode 100644
+index 0000000..e69de29
+
+***************
+--since, --after: Xem các l?n commit k? t? ngày nh?t ð?nh.
+--until: Xem các l?n commit trý?c t? ngày nh?t ð?nh.
+--author: Xem các l?n commit c?a m?t ngý?i nào ðó.
+--grep: L?c các chu?i trong log và in ra.
+
+$ git log --author=contact@thachpham.com --pretty="%s"
+Hihi
+First commit on Github
+
+*********
+Cách s? d?ng --pretty
+$ git log --pretty="%tag"
+Danh sách các %tag:
+
+%H –  Commit hash
+%h – Abbreviated commit hash
+%T – Tree hash
+%t – Abbreviated tree hash
+%P – Parent hashes
+%p – Abbreviated parent hashes
+%an – Author name
+%ae – Author e-mail
+%ad – Author date (format respects the –date=option)
+%ar – Author date, relative
+%cn – Committer name
+%ce – Committer email
+%cd – Committer date
+%cr – Committer date, relative
+%s – Subject
+
+$ git log --pretty="%an - %s"
+Thach Pham - Hihi
+Thach Pham - First commit on Github
+
+********
+Undo Commit
+
+$ git log --pretty="%s"
+Hihi
+First commit on Github
+$ git commit --amend -m "Hehe" : Xóa b? l?n commit trý?c và c?n undo ð? commit l?i
+[master 3682e56] Hehe
+ Date: Tue Apr 21 17:16:37 2015 -0700
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 faq.html
+$ git log --pretty="%s"
+Hehe
+First commit on Github
+*******
+B? t?p tin ra kh?i Staging Area
+git reset HEAD tên_file
+*********
+
+
+
+ 
