@@ -1,27 +1,27 @@
-Config git l?n ğ?u kh?i ch?y
+Config git láº§n Ä‘áº§u khá»Ÿi cháº¡y
 $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@example.com
-Xem thông tin config l?n ğ?u
+Xem thÃ´ng tin config l?n Ã°?u
 $ cat ~/.gitconfig ho?c git config --list
 
 T?o local repository
 $git init 
-$git add * ho?c git add tênfile  
-$git status : tr?ng thái t?p tin
+$git add * ho?c git add tÃªnfile  
+$git status : tr?ng thÃ¡i t?p tin
 $git commit -m"firstcommit"
 $git push ho?c git push origin master
 
-N?u file ? local ğ? t?n t?i nhıng n?i dung thay ğ?i có th? dùng 
+N?u file ? local Ã°? t?n t?i nhÃ½ng n?i dung thay Ã°?i cÃ³ th? dÃ¹ng 
 $git commit -a -m"commit"
 
-Git Log và Undo Commit
-$git log : xem thông tin các l?n commit 
-Có th? dùng $git revert 3f1ef84ada3dfd936735d8724f9bbb3437c77b19 ğ? quay l?i l?n commit trı?c
+Git Log vÃ  Undo Commit
+$git log : xem thÃ´ng tin cÃ¡c l?n commit 
+CÃ³ th? dÃ¹ng $git revert 3f1ef84ada3dfd936735d8724f9bbb3437c77b19 Ã°? quay l?i l?n commit trÃ½?c
 commit 3f1ef84ada3dfd936735d8724f9bbb3437c77b19
 Author: Thach Pham <contact@thachpham.com>
 Date: Tue Apr 21 17:16:37 2015 -0700
 
-$ git log -p:Ğ? hi?n th? tri ti?t m?i l?n commit
+$ git log -p:Ã? hi?n th? tri ti?t m?i l?n commit
 commit 3f1ef84ada3dfd936735d8724f9bbb3437c77b19
 Author: Thach Pham <contact@thachpham.com>
 Date: Tue Apr 21 17:16:37 2015 -0700
@@ -40,35 +40,35 @@ new file mode 100644
 index 0000000..e69de29
 
 ***************
---since, --after: Xem các l?n commit k? t? ngày nh?t ğ?nh.
---until: Xem các l?n commit trı?c t? ngày nh?t ğ?nh.
---author: Xem các l?n commit c?a m?t ngı?i nào ğó.
---grep: L?c các chu?i trong log và in ra.
+--since, --after: Xem cÃ¡c l?n commit k? t? ngÃ y nh?t Ã°?nh.
+--until: Xem cÃ¡c l?n commit trÃ½?c t? ngÃ y nh?t Ã°?nh.
+--author: Xem cÃ¡c l?n commit c?a m?t ngÃ½?i nÃ o Ã°Ã³.
+--grep: L?c cÃ¡c chu?i trong log vÃ  in ra.
 
 $ git log --author=contact@thachpham.com --pretty="%s"
 Hihi
 First commit on Github
 
 *********
-Cách s? d?ng --pretty
+CÃ¡ch s? d?ng --pretty
 $ git log --pretty="%tag"
-Danh sách các %tag:
+Danh sÃ¡ch cÃ¡c %tag:
 
-%H –  Commit hash
-%h – Abbreviated commit hash
-%T – Tree hash
-%t – Abbreviated tree hash
-%P – Parent hashes
-%p – Abbreviated parent hashes
-%an – Author name
-%ae – Author e-mail
-%ad – Author date (format respects the –date=option)
-%ar – Author date, relative
-%cn – Committer name
-%ce – Committer email
-%cd – Committer date
-%cr – Committer date, relative
-%s – Subject
+%H â€“  Commit hash
+%h â€“ Abbreviated commit hash
+%T â€“ Tree hash
+%t â€“ Abbreviated tree hash
+%P â€“ Parent hashes
+%p â€“ Abbreviated parent hashes
+%an â€“ Author name
+%ae â€“ Author e-mail
+%ad â€“ Author date (format respects the â€“date=option)
+%ar â€“ Author date, relative
+%cn â€“ Committer name
+%ce â€“ Committer email
+%cd â€“ Committer date
+%cr â€“ Committer date, relative
+%s â€“ Subject
 
 $ git log --pretty="%an - %s"
 Thach Pham - Hihi
@@ -80,7 +80,7 @@ Undo Commit
 $ git log --pretty="%s"
 Hihi
 First commit on Github
-$ git commit --amend -m "Hehe" : Xóa b? l?n commit trı?c và c?n undo ğ? commit l?i
+$ git commit --amend -m "Hehe" : XÃ³a b? l?n commit trÃ½?c vÃ  c?n undo Ã°? commit l?i
 [master 3682e56] Hehe
  Date: Tue Apr 21 17:16:37 2015 -0700
  2 files changed, 1 insertion(+), 1 deletion(-)
@@ -89,8 +89,8 @@ $ git log --pretty="%s"
 Hehe
 First commit on Github
 *******
-B? t?p tin ra kh?i Staging Area
-git reset HEAD tên_file
+Bá» táº­p tin ra khá»i Staging Area
+git reset HEAD tÃªn_file
 *********
 
 
