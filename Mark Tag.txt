@@ -1,0 +1,93 @@
+Ðánh d?u commit v?i Tag
+Trong Git có hai ki?u tag chính ðó là:
+
+Lightweight Tag: Các tag này ch? ðõn thu?n là ðánh d?u snapshot c?a commit.
+Annotated Tag: V?i tag này, b?n có th? ð?t tiêu ð? cho tag, và khi xem nó s? có thông tin v? ngý?i tag, ngày tag,…
+
+*************************
+Cách t?o Lightweight Tag
+$ git tag v1.0
+$ git tag :Ð? xem danh sách các tag trong d? án
+v1.0
+*******
+Bây gi? b?n có th? xem thông tin c?a l?n commit ðý?c g?n tag này b?ng l?nh git show tên_tag. 
+Lýu ? r?ng l?nh trên nó s? ðánh d?u l?n commit cu?i cùng c?a b?n vào tag v1.0.
+$ git show v1.0
+commit 05193375f7a7c1295fd26c6388d81e188f405b0b
+Author: Thach Pham <contact@thachpham.com>
+Date: Thu Apr 23 02:20:50 2015 -0700
+
+ Added a new tag
+
+diff --git a/tag.html b/tag.html
+new file mode 100644
+index 0000000..e69de29
+
+*****************************
+Cách t?o Annotated Tag có nhi?u thông tin hõn nên dùng
+
+$ git tag -a v1.0-an -m "Ra mat phien ban 1.0"
+$ git show v1.0-an
+tag v1.0-an
+Tagger: Thach Pham <contact@thachpham.com>
+Date: Thu Apr 23 02:41:11 2015 -0700
+
+Ra mat phien ban 1.0
+
+commit d5a599e3385a8fc7a65958ed50bc8b54666b45ad
+Author: Thach Pham <contact@thachpham.com>
+Date: Thu Apr 23 02:40:31 2015 -0700
+
+ Commit for Annotated Tag
+
+diff --git a/tag.html b/tag.html
+index e69de29..fea03c1 100644
+--- a/tag.html
++++ b/tag.html
+@@ -0,0 +1 @@
++Annotated Tag
+
+****************
+Thêm tag cho các commit c?
+$ git log --pretty=oneline
+d5a599e3385a8fc7a65958ed50bc8b54666b45ad Commit for Annotated Tag
+05193375f7a7c1295fd26c6388d81e188f405b0b Added a new tag
+435f642f951fbab1037fc2feef239ab26d6e6115 Added faq.html
+6904d5232bf90821068279311e205e3e1ff929f1 Initial commit
+
+$ git tag -a v0.0 6904d -m "Tag for inintial commit"
+$ git tag
+v0.0
+v1.0
+v1.0-an
+***********
+Push Tag
+$ git push --tags
+Username for 'https://github.com': thachphamblog
+Password for 'https://thachphamblog@github.com': 
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (7/7), 775 bytes | 0 bytes/s, done.
+Total 7 (delta 1), reused 0 (delta 0)
+To https://github.com/thachphamblog/hoc-git.git
+ * [new tag] v0.0 -> v0.0
+ * [new tag] v1.0 -> v1.0
+ * [new tag] v1.0-an -> v1.0-an
+
+***********
+Nh?p tag vào branch git checkout -b tên_branch tên_tag
+
+$ git checkout -b version1 v1.0-an
+Switched to a new branch 'version1'
+Lúc này b?n ð? t? ð?ng chuy?n qua branch version1 thay v? master ban ð?u, kèm theo ðó là d? li?u c?a l?n commit ðý?c g?n tag v1.0-an.
+
+Bây gi? n?u b?n mu?n làm vi?c thêm v?i branch này th? c? làm vi?c nhý khi b?n ? master. 
+Ð? chuy?n v? l?i master, b?n g? l?nh git checkout master.
+
+Ð? push cái branch này lên b?n có th? s? d?ng l?nh git push origin version1. 
+N?u b?n quên th? m?nh nh?c l?i nhé, 
+origin chính là tên ð?a ch? remote c?a repository m?c ð?nh mà Git t? ð?t khi b?n clone.
+
+**************
+
