@@ -1,27 +1,27 @@
 Config git lần đầu khởi chạy
 $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@example.com
-Xem thông tin config l?n ð?u
+Xem thông tin config lần đầu
 $ cat ~/.gitconfig ho?c git config --list
 
-T?o local repository
+Tạo local repository
 $git init 
-$git add * ho?c git add tênfile  
-$git status : tr?ng thái t?p tin
+$git add * hoặc git add tênfile  
+$git status : trạng thái tập tin
 $git commit -m"firstcommit"
 $git push ho?c git push origin master
 
-N?u file ? local ð? t?n t?i nhýng n?i dung thay ð?i có th? dùng 
+Nếu file local đã tồn tại lúc clone mà nội dụng thay đổi
 $git commit -a -m"commit"
 
 Git Log và Undo Commit
-$git log : xem thông tin các l?n commit 
+$git log : xem thông tin các lần commit
 Có th? dùng $git revert 3f1ef84ada3dfd936735d8724f9bbb3437c77b19 ð? quay l?i l?n commit trý?c
 commit 3f1ef84ada3dfd936735d8724f9bbb3437c77b19
 Author: Thach Pham <contact@thachpham.com>
 Date: Tue Apr 21 17:16:37 2015 -0700
 
-$ git log -p:Ð? hi?n th? tri ti?t m?i l?n commit
+$ git log -p:Hiển thị tri tiết commit
 commit 3f1ef84ada3dfd936735d8724f9bbb3437c77b19
 Author: Thach Pham <contact@thachpham.com>
 Date: Tue Apr 21 17:16:37 2015 -0700
@@ -40,17 +40,17 @@ new file mode 100644
 index 0000000..e69de29
 
 ***************
---since, --after: Xem các l?n commit k? t? ngày nh?t ð?nh.
---until: Xem các l?n commit trý?c t? ngày nh?t ð?nh.
---author: Xem các l?n commit c?a m?t ngý?i nào ðó.
---grep: L?c các chu?i trong log và in ra.
+--since, --after: Xem các lần commit kể từ ngày nhất định.
+--until: Xem các lần commit trước từ ngày nhất định.
+--author: Xem các lần commit của một người nào đó.
+--grep: Lọc các chuỗi trong log và in ra.
 
 $ git log --author=contact@thachpham.com --pretty="%s"
 Hihi
 First commit on Github
 
 *********
-Cách s? d?ng --pretty
+Cách dùng --pretty
 $ git log --pretty="%tag"
 Danh sách các %tag:
 
@@ -80,7 +80,7 @@ Undo Commit
 $ git log --pretty="%s"
 Hihi
 First commit on Github
-$ git commit --amend -m "Hehe" : Xóa b? l?n commit trý?c và c?n undo ð? commit l?i
+$ git commit --amend -m "Hehe" : Xóa bỏ lần commit trước và cần undo để commit lại
 [master 3682e56] Hehe
  Date: Tue Apr 21 17:16:37 2015 -0700
  2 files changed, 1 insertion(+), 1 deletion(-)
